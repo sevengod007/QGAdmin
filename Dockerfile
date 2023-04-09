@@ -19,7 +19,7 @@ COPY conf/QuestionBank.db /opt/QuestionBank.db
 
 COPY ./dist/docker_linux_$TARGETARCH*/QGAdmin /opt/QGAdmin
 
-RUN  chmod -R 777 /opt/study_xxqg && \
+RUN  chmod -R 777 /opt/QGAdmin && \
      cd /opt/ && \
      ./QGAdmin --init
 
