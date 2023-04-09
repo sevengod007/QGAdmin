@@ -17,14 +17,14 @@ RUN  apt-get -qq update && \
 COPY conf/config_default.yml /opt/config/config.yml
 COPY conf/QuestionBank.db /opt/QuestionBank.db
 
-COPY ./dist/docker_linux_$TARGETARCH*/study_xxqg /opt/study_xxqg
+COPY ./dist/docker_linux_$TARGETARCH*/QGAdmin /opt/QGAdmin
 
 RUN  chmod -R 777 /opt/study_xxqg && \
      cd /opt/ && \
-     ./study_xxqg --init
+     ./QGAdmin --init
 
 EXPOSE 8080
 
 VOLUME /opt/config
 
-CMD cd /opt && ./study_xxqg
+CMD cd /opt && ./QGAdmin
